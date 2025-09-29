@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGA STORE VIP.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="shop-title">MEGA STORE VIP 🇵🇪</h1>
+        <a href="referencias.html" class="header-link-btn animated-btn">⭐ Ver Referencias de Clientes</a>
+        <p>Realiza tu pedido y paga fácilmente con Yape. ¡Simple y rápido!
+        (activación con tu propio correo electrónico)</p>
+    </header>
+
+    <main>
+        <section id="products">
+            <h2>Nuestros Productos</h2>
+
+            <div class="product animated-item" data-price="25.00" data-name="Camiseta Perú">
+                <img src="img/product1.jpg" alt="Camiseta Perú">
+                <div class="product-info">
+                    <h3>Pack 3x1 - Herramientas Premium</h3>
+                    <p class="product-price-info">- ChatGPT Pro <br>- PicsArt Pro <br>- Capcut premium <br> Acceso durante 1 año y soporte técnico durante todo el año de servicio<br><span class="price-shadow">S/ 25.00</span></p>
+                    <div class="quantity-control">
+                        <button class="qty-btn minus-btn">-</button>
+                        <input type="number" min="0" value="0" class="quantity" readonly>
+                        <button class="qty-btn plus-btn">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product animated-item" data-price="29.00" data-name="Zapatillas Urbanas">
+                <img src="img/product2.jpg" alt="Zapatillas Urbanas">
+                <div class="product-info">
+                    <h3>Gémini Pro - 12 meses <br>(primero lo activo y luego pagas)</h3>
+                    <p class="product-price-info">Accede a Gémini Pro durante 12 meses y con tu propio correo electrónico<br><span class="price-shadow">S/ 29.00</span></p>
+                     <div class="quantity-control">
+                        <button class="qty-btn minus-btn">-</button>
+                        <input type="number" min="0" value="0" class="quantity" readonly>
+                        <button class="qty-btn plus-btn">+</button>
+                    </div>
+                </div>
+            </div>
+
+            </section>
+
+        <section id="checkout">
+            <h2 id="checkout-title">Tu Pedido</h2>
+            
+            <div id="order-summary-container">
+                <h4 class="summary-subtitle">Productos Seleccionados</h4>
+                <div id="order-summary">
+                    <p class="empty-cart-message">Tu carrito está vacío. ¡Agrega productos!</p>
+                </div>
+            </div>
+
+            <div class="total-container">
+                <p class="final-total-label">TOTAL A PAGAR:</p>
+                <span id="total-amount" class="total">S/ 0.00</span>
+            </div>
+
+            <form id="yape-form" action="https://formspree.io/f/[TU_DIRECCIÓN_EMAIL]" method="POST" enctype="multipart/form-data">
+                
+                <h3 class="yape-header">✅ Instrucciones de Pago Yape</h3>
+                <div class="yape-step-list">
+                    <p class="yape-step"><strong>1. Yapea el Monto:</strong> Transfiere exactamente <span id="total-yape" class="yape-amount">S/ 0.00</span> al número 📞 992764784 Titular: Sthefany M. Munoz L.</p>
+                    <p class="yape-step"><strong>2. Adjunta Comprobante:</strong> Sube la captura de tu Yapeo en el campo de abajo.</p>
+                    <p class="yape-step"><strong>3. Confirma Pedido:</strong> Completa tus datos y presiona "Enviar".</p>
+                </div>
+
+                <input type="hidden" name="Resumen_Pedido" id="hidden-summary" value="">
+
+                <h3 class="form-header">Datos del cliente</h3>
+
+                <label for="name">Nombre Completo:</label>
+                <input type="text" id="name" name="Nombre_Cliente" required>
+
+                <label for="phone">WhatsApp (Para contactarte):</label>
+                <input type="tel" id="phone" name="Telefono_Contacto" required>
+
+                <label for="address">Correo electrónico para activar la cuenta:</label>
+                <textarea id="address" name="Direccion_Envio" required></textarea>
+
+                <label for="proof">Adjuntar Comprobante de Yape:</label>
+                <input type="file" id="proof" name="Comprobante_Yape" accept="image/*,.pdf" required>
+                
+                <button type="submit" id="submit-order" disabled>Enviar</button>
+            </form>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
